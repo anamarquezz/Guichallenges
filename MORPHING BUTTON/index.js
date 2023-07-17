@@ -3,11 +3,13 @@ const spinner = '<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 
 const states = {
   idle: 'Do some hard work',
   sending: `${spinner} working...`,
+  registering: `registering...`,
   done: 'Done!',
 }
 
 demo.onclick = () => {
   setState('sending')
+  setTimeout(() => setState('registering your new thingy'), 2000)
   setTimeout(() => setState('done'), 4000)
   setTimeout(() => setState('idle'), 6000)
 }
